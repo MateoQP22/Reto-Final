@@ -1,8 +1,16 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import HeaderPage from '../components/sections/HeaderPage'
 
 const PrimaryLayout = () => {
   return (
-    <div>PrimaryLayout</div>
+    <>
+      <HeaderPage />
+      <main>
+        <Outlet/>
+      </main>
+      <footer>Pie</footer>
+    </>
   )
 }
 
