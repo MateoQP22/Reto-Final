@@ -6,28 +6,28 @@ import logoFinal from '../../assets/react.svg'
 
 const HeaderPage = () => {
 
-  const header = useRef();
-  const modal = useRef();
+    const header = useRef();
+    const modal = useRef();
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme') ?? '');
+    const [theme, setTheme] = useState(localStorage.getItem('theme') ?? '');
 
-  const selectTheme = (e) => {
-    document.documentElement.className = e.target.value;
-    localStorage.setItem('theme', e.target.value);
-    setTheme(e.target.value);
-  };
+    const selectTheme = (e) => {
+        document.documentElement.className = e.target.value;
+        localStorage.setItem('theme', e.target.value);
+        setTheme(e.target.value);
+    };
 
-  const showMenu = () => {
-    header.current.classList.add('header--menu');
-    modal.current.classList.add('modal--show');
-  };
+    const showMenu = () => {
+        header.current.classList.add('header--menu');
+        modal.current.classList.add('modal--show');
+    };
 
-  const hideMenu = () => {
-    header.current.classList.remove('header--menu');
-    modal.current.classList.remove('modal--show');
-  };
+    const hideMenu = () => {
+        header.current.classList.remove('header--menu');
+        modal.current.classList.remove('modal--show');
+    };
 
-    
+
     return (
         <header
             className="header"
@@ -36,7 +36,7 @@ const HeaderPage = () => {
             <nav className="nav">
                 <div className="container f-elements f-elements--header">
                     <Link to="/">
-                        <img src={logoFinal} alt="Logo de EAKON" className="nav__logo" width="32" height="32" />
+                        <img src={logoFinal} alt="Logo de React" className="nav__logo" width="32" height="32" />
                     </Link>
                     <div
                         className="modal modal--header"
@@ -111,7 +111,7 @@ const HeaderPage = () => {
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
 export default HeaderPage
