@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorRouter from '../components/error/ErrorRouter';
-import MainNosotros from '../components/nosotros/MainNosotros';
 import PrimaryLayout from '../layout/PrimaryLayout';
 
 export const primaryRoute = createBrowserRouter([
@@ -19,7 +18,7 @@ export const primaryRoute = createBrowserRouter([
             },
             {
                 path: 'nosotros',
-                element: <MainNosotros/>
+                element: <h1>Nosotros</h1>
             },
             {
                 path: 'servicios',
