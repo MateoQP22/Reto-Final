@@ -22,7 +22,7 @@ export const primaryRoute = createBrowserRouter([
             },
             {
                 path: 'nosotros',
-                element: <MainNosotros/>
+                element: <h1>Nosotros</h1>
             },
             {
                 path: 'contactos',
