@@ -1,7 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorRouter from '../components/error/ErrorRouter';
 import MainNosotros from '../components/nosotros/MainNosotros';
+import MainContactos from '../components/contactos/MainContactos';
 import PrimaryLayout from '../layout/PrimaryLayout';
+import HomePage from '../pages/HomePage';
+import ProductsPage from '../pages/ProductsPage';
 
 export const primaryRoute = createBrowserRouter([
     {
@@ -11,23 +14,19 @@ export const primaryRoute = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <h1>Home</h1>
+                element: <HomePage/>
             },
             {
                 path: 'productos',
-                element: <h1>Productos</h1>
+                element: <ProductsPage/>
             },
             {
                 path: 'nosotros',
                 element: <MainNosotros/>
             },
             {
-                path: 'servicios',
-                element: <h1>Servicios</h1>
-            },
-            {
                 path: 'contactos',
-                element: <h1>Contactos</h1>
+                element: <MainContactos/>
             }
         ]
     }
