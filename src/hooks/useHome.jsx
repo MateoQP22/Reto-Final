@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const useHome = () => {
 
-  return (useSelector(state => state.home));
+    return (useSelector(state => state.home));
 
-
-export default useHome;
+}
+    export default useHome;
