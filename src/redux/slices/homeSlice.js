@@ -1,45 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchReadBestSellersProducts, fetchReadHeroProducts } from "../thunks/homeThunk";
+import { fetchReadHeroPokemons } from "../thunks/homeThunks";
 
 const initialState = {
-    loading: false,
-    error: {},
-    heroProducts: [],
-    bestSellersProducts: []
+  loading: false,
+  error: {},
+  heroPokemons: [],
 };
 
 export const homeSlice = createSlice({
-    name: 'home',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addCase(fetchReadHeroProducts.pending, (state) => {
-            state.loading = true;
-        });
-        builder.addCase(fetchReadHeroProducts.fulfilled, (state, { payload }) => {
-            state.loading = false;
-            state.error = {};
-            state.heroProducts = payload;
-        });
-        builder.addCase(fetchReadHeroProducts.rejected, (state, { payload }) => {
-            state.loading = false;
-            state.error = payload;
-            state.heroProducts = [];
-        });
-        builder.addCase(fetchReadBestSellersProducts.pending, (state) => {
-            state.loading = true;
-        });
-        builder.addCase(fetchReadBestSellersProducts.fulfilled, (state, { payload }) => {
-            state.loading = false;
-            state.error = {};
-            state.bestSellersProducts = payload;
-        });
-        builder.addCase(fetchReadBestSellersProducts.rejected, (state, { payload }) => {
-            state.loading = false;
-            state.error = payload;
-            state.bestSellersProducts = [];
-        });
-    }
-});
+  name: 'home',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchReadHeroPokemons.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchReadHeroPokemons.fulfilled, (state, { payload }) => {
+      state.loading = false;
+      state.error = {};
+      state.heroPokemons = payload;
+    });
+    builder.addCase(fetchReadHeroPokemons.rejected, (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
+      state.heroPokemons = [];
+    });
+  }
+}); 
 
 export default homeSlice.reducer;

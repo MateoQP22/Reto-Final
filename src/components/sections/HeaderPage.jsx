@@ -58,15 +58,6 @@ const HeaderPage = () => {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/servicios"
-                                    className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
-                                    onClick={hideMenu}
-                                >
-                                    Servicios
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
                                     to="/nosotros"
                                     className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
                                     onClick={hideMenu}

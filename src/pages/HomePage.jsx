@@ -1,29 +1,22 @@
-import { useEffect } from "react";
+import React, { useEffect } from 'react'
 import { useDispatch } from "react-redux";
-import LoadersModal from "../components/common/loaders/LoadersModal";
-import ContactMeans from "../components/contact/ContactMeans";
-import HomeBestSellers from "../components/home/HomeBestSellers";
-import HomeHero from "../components/home/HomeHero";
-import useHome from "../hooks/useHome";
-import { fetchReadBestSellersProducts, fetchReadHeroProducts } from "../redux/thunks/homeThunk";
+import HomeMain from '../components/home/homeMain'
+import useHome from '../hooks/useHome';
+import { fetchReadHeroPokemons } from '../redux/thunks/homeThunks';
 
 const HomePage = () => {
-    const dispatch = useDispatch();
-    const { loading, heroProducts } = useHome();
 
-    useEffect(() => {
-        dispatch(fetchReadHeroProducts());
-        dispatch(fetchReadBestSellersProducts());
-    }, []);
+  const dispatch = useDispatch();
+  const { heroPokemons } = useHome();
 
-    return (
-        <>
-            {loading && <LoadersModal />}
-            <HomeHero heroProducts={heroProducts} />
-            <HomeBestSellers />
-            <ContactMeans />
-        </>
-    );
-};
+  useEffect(()=> {
+    dispatch(fetchReadHeroPokemons());
+  }, []);
 
-export default HomePage;
+  return (
+    <HomeMain heroPokemons={heroPokemons}/>
+  )
+}
+
+export default HomePage
+
